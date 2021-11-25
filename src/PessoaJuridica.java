@@ -15,4 +15,9 @@ public class PessoaJuridica extends Client {
         System.out.println("Name: " + this.name + "\tCnpj: " + this.cnpj + "\tFuncionarios: " + this.numFuncionarios
                 + "\tSetor: " + this.setor + "\tEndereço" + this.address);
     }
+
+    @Override
+    boolean autenticar(String chave) {
+        return chave == this.cnpj;
+    }
 }

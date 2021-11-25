@@ -15,4 +15,9 @@ public class PessoaFisica extends Client {
         System.out.println("Name: " + this.name + "\tCpf: " + this.cpf + "\tIdade: " + this.age + "\tSexo: " + this.sex
                 + "\tEndereço" + this.address);
     }
+
+    @Override
+    boolean autenticar(String chave) {
+        return chave == this.cpf;
+    }
 }

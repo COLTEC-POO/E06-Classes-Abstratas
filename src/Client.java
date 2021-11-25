@@ -27,4 +27,6 @@ public abstract class Client {
         return this.creation_date;
     }
 
+    abstract boolean autenticar(String chaveString);
+
 }
