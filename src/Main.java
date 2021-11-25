@@ -43,15 +43,15 @@ public class Main {
         Camila.setGenero('f');
 
          //inicialização das Contas
-        Conta jonas= new Conta(Jonas,01);
+        Conta jonas= new ContaCorrente(Jonas,01);
         jonas.setLimite(200);
         jonas.setNumero("1");
-        Conta samuel= new Conta(Samuel,02);
+        Conta samuel= new ContaPoupanca(Samuel,02);
         samuel.setLimite(500);
         samuel.setNumero("1");
-        Conta camila= new Conta(Camila,03);
+        Conta camila= new ContaUniversitaria(Camila,03);
         camila.setLimite(800);
-        Conta sorvebao=new Conta(Sorvebao,55);
+        Conta sorvebao=new ContaCorrente(Sorvebao,55);
         sorvebao.setLimite(25000);
 
          //depositando dinheiro na conta
@@ -145,6 +145,18 @@ public class Main {
             System.out.println("Está autenticado!");
         else
             System.out.println("Não está autenticado!");
+
+        //testando os limites das contas criadas
+        //conta corrente
+        jonas.setLimite(500);
+        jonas.setLimite(-500);
+
+        samuel.setLimite(500);
+        samuel.setLimite(-50);
+
+        camila.setLimite(500);
+        camila.setLimite(-10);
+
     }
 
 }

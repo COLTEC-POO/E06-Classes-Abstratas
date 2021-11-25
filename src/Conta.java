@@ -1,14 +1,13 @@
-public class Conta {
+public abstract class Conta {
 
     //atributos da classe Conta
     private Cliente dono;
     private String numero;//transformei em string para usar o equals
 
     private double saldo;
-    private double limite;
     public Operacao[ ]operacoes;
 
-    //variavel para controlar o indice do vetor de operações
+     //variavel para controlar o indice do vetor de operações
     public int numeroOp;
 
     //numero de contas criadas durante a execução do sistema
@@ -20,7 +19,6 @@ public class Conta {
        //metodo para criar
     public Conta(Cliente dono,int numConta){
         this.saldo=0;
-        this.limite=0;
         this.numero="0";
         this.dono=dono;
         this.operacoes=new Operacao[1000];
@@ -49,19 +47,11 @@ public class Conta {
         return this.saldo;
     }
 
-    public double getLimite() {
+    /*public double getLimite() {
         return limite;
-    }
+    }*/
 
-    public void setLimite(double limite) {
-        if(limite<0){
-            this.limite = 0;
-        } else{
-            this.limite = limite;
-            System.out.println("Limite alterado de "+this.limite+"para "+limite);
-        }
-    }
-
+    public abstract void setLimite(double limite);
 
 
     //metodo - saque: possibilita a retirada de dinheiro da conta
@@ -86,8 +76,7 @@ public class Conta {
     public String toString(){
         String contaStr= "Número:"+this.numero+"\n"+
                 "Nome:"+this.dono.getNome()+"\n"+
-                "Saldo:"+this.saldo+"\n"+
-                "Limite:"+this.limite;
+                "Saldo:"+this.saldo+"\n";
         return contaStr;
     }
 
