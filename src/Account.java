@@ -1,9 +1,9 @@
 import java.text.NumberFormat;
 
-public class Account {
+public abstract class Account {
     private int id;
     private double total;
-    private double limit;
+    protected double limit;
     private Client owner;
     private Operacao[] operations = new Operacao[10000];
     private int currentOperation = 0;
@@ -100,9 +100,7 @@ public class Account {
         return limit;
     }
 
-    public void setLimit(double limit) {
-        this.limit = limit;
-    }
+    public abstract void setLimit(double limit);
 
     public int getTotalAccounts() {
         return Account.count;

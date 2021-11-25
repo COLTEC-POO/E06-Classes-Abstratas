@@ -5,8 +5,8 @@ public class Main {
         Client client2 = new PessoaFisica("Ana Carolina", "987.654.321-98", "Rua não sei lá, 666", 18, 'F');
         Client client3 = client1;
 
-        Account account1 = new Account(client1, 0.0, 500, 1);
-        Account account2 = new Account(client2, 500, 500, 2);
+        Account account1 = new ContaCorrente(client1, 0.0, 500, 1);
+        Account account2 = new ContaPoupanca(client2, 500, 500, 2);
 
         account1.deposit(100.0);
         account1.withdraw(250.0);
