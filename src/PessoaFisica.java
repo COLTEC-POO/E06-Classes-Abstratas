@@ -37,10 +37,10 @@ public class PessoaFisica extends Cliente {
     }
 
     public String toString() {
-        String pessoafisicaStr = "CPF:" + this.cpf + "\n" +
+        String pessoafisica = "CPF:" + this.cpf + "\n" +
                 "Idade:" + this.idade + "\n" +
                 "Gênero:" + this.genero;
-        return pessoafisicaStr;
+        return pessoafisica;
     }
 
     public boolean equals(Object obj) {
@@ -56,5 +56,13 @@ public class PessoaFisica extends Cliente {
             return false;
         }
 
+    }
+
+    public boolean autenticar (String chave){
+        if(chave.equals(this.cpf)){
+            return true;
+        } else{
+            return false;
+        }
     }
 }

@@ -38,4 +38,6 @@ public abstract class Cliente {
         System.out.println("Data da criação do cadastro:"+getDataCliente());
     }
 
+    public abstract boolean autenticar(String chave);
+
 }

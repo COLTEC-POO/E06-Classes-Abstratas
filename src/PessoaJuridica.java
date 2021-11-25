@@ -51,5 +51,13 @@ public class PessoaJuridica extends Cliente{
 
     }
 
+    public boolean autenticar (String chave){
+        if(chave.equals(this.cnpj)){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
 
 }

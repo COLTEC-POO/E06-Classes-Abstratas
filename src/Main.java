@@ -17,12 +17,7 @@ public class Main {
         Sorvebao.setNumFuncionarios(12);
         Sorvebao.setSetor("Alimenticio");
 
-       /* //impressão cadastros pessoas juridicas
-        System.out.println("***Dados Clientes-Pessoa Juridica:");
-        Sorvebao.imprimirClientePJ(Sorvebao);*/
-
-
-        //cadastro pessoas fisicas
+               //cadastro pessoas fisicas
         //Jonas
         PessoaFisica Jonas=new PessoaFisica();
         Jonas.setNome("Jonas");
@@ -47,14 +42,7 @@ public class Main {
         Camila.setidade(29);
         Camila.setGenero('f');
 
-        /*//impressão cadastros pessoas fisicas
-        System.out.println("***Dados Clientes-Pessoa Física:");
-        Jonas.imprimirClientePF(Jonas);
-        Samuel.imprimirClientePF(Samuel);
-        Camila.imprimirClientePF(Camila);*/
-
-
-        //inicialização das Contas
+         //inicialização das Contas
         Conta jonas= new Conta(Jonas,01);
         jonas.setLimite(200);
         jonas.setNumero("1");
@@ -66,15 +54,7 @@ public class Main {
         Conta sorvebao=new Conta(Sorvebao,55);
         sorvebao.setLimite(25000);
 
-        /*//imprimindo os dados das contas
-        System.out.println("***Dados Contas-Pessoa Física:");
-        jonas.imprimir(jonas);
-        samuel.imprimir(samuel);
-        camila.imprimir(camila);
-        System.out.println("***Dados Contas-Pessoa Juridica:");
-        sorvebao.imprimir(sorvebao);*/
-
-        //depositando dinheiro na conta
+         //depositando dinheiro na conta
         jonas.depositar(800);
         samuel.depositar(1500);
         camila.depositar(2500);
@@ -155,7 +135,16 @@ public class Main {
         else{
             System.out.println("São diferentes!");
         }
+        //testando o metodo autenticar
+        if(Jonas.autenticar("000"))
+            System.out.println("Está autenticado!");
+        else
+            System.out.println("Não está autenticado!");
 
+        if(Sorvebao.autenticar("11.101.102/0001-99"))
+            System.out.println("Está autenticado!");
+        else
+            System.out.println("Não está autenticado!");
     }
 
 }
