@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Client {
+public abstract class Client {
     protected String name;
     protected String address;
     protected Date creation_date;

@@ -1,13 +1,6 @@
-
-/**
- * Operacao.java
- *
- * @author João Eduardo Montandon
- */
-
 import java.util.Date;
 
-public class Operacao {
+public abstract class Operacao {
 
     public Date data;
     public char tipo;
