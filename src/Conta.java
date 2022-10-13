@@ -103,6 +103,14 @@ public abstract class Conta {
         }
     }
 
+    public void imprimeExtrato(){
+        int i;
+        
+            for(i = 0; i < this.getNumOp(); i++){
+                this.operações[i].toString();
+            }
+    }
+
     public String toString() {
 		String dadosCliente ="Numero da Conta: " + this.numConta + "\n" +
 						 	 "Limite: " + this.limite + "\n" +

@@ -1,26 +1,24 @@
 public class Main {
     public static void main(String[] args){
 
-        boolean comparaConta;
-
-        Conta contacoltec = new Conta(new PessoaJuridica());
+        Conta contacoltec = new ContaCorrente(new PessoaJuridica(), 100000);
         contacoltec.depositar(100000);
         contacoltec.sacar(5000);
         System.out.println(contacoltec.toString());
 
-        Conta minhaConta = new Conta(new PessoaFisica());
+        Conta minhaConta = new ContaPoupanca(new PessoaFisica(),900);
         minhaConta.depositar(1000);
         minhaConta.sacar(500);
         System.out.println(minhaConta.toString());
 
+        Conta contaaluno = new ContaUniversitaria(new PessoaFisica(), 250);
+        contaaluno.depositar(1000);
+        contaaluno.sacar(500);
+        System.out.println(contaaluno.toString());
 
-        comparaConta = minhaConta.equals(contacoltec);
-        if(comparaConta){
-            System.out.println("As contas são iguais");
-        }else{
-            System.out.println("As contas são diferentes");
-        }
+        contacoltec.imprimeExtrato();
+        minhaConta.imprimeExtrato();
+        contaaluno.imprimeExtrato();
 
     }
 }
-n
