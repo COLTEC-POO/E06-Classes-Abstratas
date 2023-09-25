@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.util.Date;
 
 // Classe Cliente que representa um cliente genérico
@@ -13,8 +15,11 @@ public abstract class Cliente {
         this.data = new Date();
     }
 
-    // Métodos abstratos para forçar subclasses a criar instâncias
+    // Método abstrato para forçar subclasses a criar instância
     public abstract String getTipo();
+
+    // Metodo abstrato para autenticar Cliente
+    public abstract Boolean autenticar(String x);
 
     // Sobrescreve a função toString()
     @Override
@@ -39,9 +44,15 @@ public abstract class Cliente {
         }
 
         // Sobrescreve o método para retornar o tipo
-        @Override
+
         public String getTipo() {
             return "Pessoa Fisica";
+        }
+
+        // Aplicando o metodo de autenticar
+
+        public Boolean autenticar(String chave) {
+            return chave.equals(this.cpf);
         }
 
         // Sobrescreve a função toString() para exibir informações de PessoaFisica
@@ -100,6 +111,12 @@ public abstract class Cliente {
                     "CNPJ: " + cnpj + "\n" +
                     "NumFuncionarios: " + numFunc + "\n" +
                     "Setor: " + setor;
+        }
+
+        // Aplicando o metodo de autenticar
+        @Override
+        public Boolean autenticar(String cnpj) {
+            return true;
         }
 
         // Sobrescreve a função equals para comparar objetos PessoaJuridica com base no CNPJ

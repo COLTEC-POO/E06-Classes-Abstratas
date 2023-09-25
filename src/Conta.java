@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Conta {
+public abstract class Conta {
 
     // Variaveis privadas basicas da conta
     final int numero;
@@ -88,7 +88,6 @@ public class Conta {
     }
 
     // Confere se o cpf esta sendo usado
-    // Confere se o cpf está sendo usado
     public static boolean cpfUsado(Conta[] contas, String cpf) {
         for (Conta conta : contas) {
             if (conta != null && conta.getCliente() instanceof Cliente.PessoaFisica) {
@@ -120,13 +119,17 @@ public class Conta {
     public static Conta[] regContas() {
         Scanner linhaDeComando = new Scanner(System.in);
 
-        int tamanho = 2;
+        System.out.println("Entre o tamanho do array");
+        int tamanho = linhaDeComando.nextInt();
+        linhaDeComando.nextLine();
+
 
         Conta[] contas = new Conta[tamanho];
 
         for (int i = 0; i < contas.length; i++) {
             System.out.println("Digite o nome do dono:");
             String dono = linhaDeComando.nextLine();
+
 
             System.out.println("Digite o endereco do dono:");
             String endereco = linhaDeComando.nextLine();
@@ -208,8 +211,6 @@ public class Conta {
                 System.out.println("Tipo de cliente inválido. A conta não será criada.");
                 continue;
             }
-
-            contas[i] = new Conta(numero, senha, saldo, dono, limite, cliente);
         }
 
         for (Conta contaAtual : contas) {System.out.print("Cadastradas: " + contaAtual.getDono());

@@ -14,6 +14,10 @@ public class Main {
 
             conta.imprimirExtrato();
 
+            if(contas.PessoaFisica.autenticar("laalalala")){
+                System.out.println("Damn son, where'd you find this!");
+            }
+
             // Espaco entre as contas
             System.out.println();
 
