@@ -13,6 +13,9 @@ public abstract class Cliente {
         this.data = new Date();
     }
 
+    // Método abstrato de autenticação
+    public abstract boolean autenticar(String chave);
+
     // Métodos abstratos para forçar subclasses a criar instâncias
     public abstract String getTipo();
 
@@ -42,6 +45,13 @@ public abstract class Cliente {
         @Override
         public String getTipo() {
             return "Pessoa Fisica";
+        }
+
+        // Sobrescreve a função abstrata acima
+        @Override
+        public boolean autenticar(String chave) {
+
+            return this.cpf.equals(chave);
         }
 
         // Sobrescreve a função toString() para exibir informações de PessoaFisica
@@ -88,6 +98,12 @@ public abstract class Cliente {
         @Override
         public String getTipo() {
             return "Pessoa Juridica";
+        }
+
+        // Sobrescreve a função abstrata de autenticar
+        @Override
+        public boolean autenticar(String chave) {
+            return this.cnpj.equals(chave);
         }
 
         // Sobrescreve a função toString() para exibir informações de PessoaJuridica
