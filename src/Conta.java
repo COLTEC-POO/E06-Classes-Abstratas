@@ -99,7 +99,7 @@ public abstract class Conta {
             if (valor >= 0) {
                 this.setSaldo(saldoAtual + valor);
 
-                this.operacoes[numOp] = new Operacao.OperacaoSaque(valor);
+                this.operacoes[numOp] = new Operacao.OperacaoDeposito(valor);
                 numOp++;
             }
         }
@@ -151,7 +151,7 @@ public abstract class Conta {
             if (valor >= 0) {
                 this.setSaldo(saldoAtual + valor);
 
-                this.operacoes[numOp] = new Operacao.OperacaoSaque(valor);
+                this.operacoes[numOp] = new Operacao.OperacaoDeposito(valor);
                 numOp++;
             }
         }
@@ -205,7 +205,7 @@ public abstract class Conta {
             if (valor >= 0) {
                 this.setSaldo(saldoAtual + valor);
 
-                this.operacoes[numOp] = new Operacao.OperacaoSaque(valor);
+                this.operacoes[numOp] = new Operacao.OperacaoDeposito(valor);
                 numOp++;
             }
         }
