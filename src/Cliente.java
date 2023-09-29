@@ -19,12 +19,6 @@ public abstract class Cliente {
     // Métodos abstratos para forçar subclasses a criar instâncias
     public abstract String getTipo();
 
-    // Sobrescreve a função toString()
-    @Override
-    public String toString() {
-        return getTipo() + " Invalido";
-    }
-
     // Classe interna PessoaFisica que representa um cliente pessoa física
     public static class PessoaFisica extends Cliente {
         public String cpf;
