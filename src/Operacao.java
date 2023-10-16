@@ -66,5 +66,9 @@ public abstract class Operacao {
             return " " + this.data + " d " + " " + this.valor;
         }
     }
+
+    public String extrato() {
+        return getTipoOperacao() + getDetalhesOperacao();
+    }
 }
 
